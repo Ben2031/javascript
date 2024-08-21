@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+       
+ <body>
+<h1>my javascript page</h1>
+<script>
+function grad( num1){
+for(var i=0;i<5 ;i++){
+var user=prompt("enter your age ")
+if (user<=12){
+    alert("you are a child");}
+else if(user<=17){
+   alert("teenager");}
+   }}
+   
+   
+   
+var user=prompt("enter your age ");
+grad(user);
+   
+  
+
+
+</script>
+<div>
+<h3>who are you ?  </h3>
+</body>
+			 
+			 
+
+
+
+</html>
