@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border
+
+
+</style>
+<body>
+    <div class="container">
+        <h2>Bumble's Family 25th Anniversary Invitation</h2>
+        <form id="rsvpForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="attendees">Number of Attendees:</label>
+            <input type="number" id="attendees" name="attendees" min="1" required>
+            
+            <label for="time">Arrival Time:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="menu">Menu Preference:</label>
+            <select id="menu" name="menu" required>
+                <option value="Vegan">Vegan</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+            </select>
+            
+            <label for="table">Select Table Option:</label>
+            <select id="table" name="table" required>
+                <option value="Table 1">Table 1</option>
+                <option value="Table 2">Table 2</option>
+                <option value="Table 3">Table 3</option>
+                <option value="Table 4">Table 4</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+	
+	document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get form data
+    const fullName = document.getElementById("fullName").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const attendees = document.getElementById("attendees").value;
+    const time = document.getElementById("time").value;
+    const menu = document.getElementById("menu").value;
+    const table = document.getElementById("table").value;
+
+    // Store form data in localStorage
+    localStorage.setItem("fullName", fullName);
+    localStorage.setItem("phone", phone);
+    localStorage.setItem("email", email);
+    localStorage.setItem("attendees", attendees);
+    localStorage.setItem("time", time);
+    localStorage.setItem("menu", menu);
+    localStorage.setItem("table", table);
+
+    // Redirect to the details page
+    window.location.href = "Details.html";
+});
+
+	</script>
+</body>
+</html>
