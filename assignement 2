@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="confirmation-container">
+        <h2>Thank you for your RSVP. Here is your Confirmation Card.</h2>
+        
+        <div class="details">
+            <p>Full Name: <span id="fullName"></span></p>
+            <p>Phone Number: <span id="phone"></span></p>
+            <p>Email: <span id="email"></span></p>
+            <p>Number of Attendees: <span id="attendees"></span></p>
+            <p>Arrival Time: <span id="time"></span></p>
+            <p>Menu Preference: <span id="menu"></span></p>
+            <p>Table Option: <span id="table"></span></p>
+        </div>
+
+        <img src="mr-mrs-bumble.jpg" alt="Mr. and Mrs. Bumble" class="bumble-image">
+    </div>
+
+    <script>
+	// Fetch stored data from localStorage
+	const fullName = localStorage.getItem("fullName");
+	const phone = localStorage.getItem("phone");
+	const email = localStorage.getItem("email");
+	const attendees = localStorage.getItem("attendees");
+	const time = localStorage.getItem("time");
+	const menu = localStorage.getItem("menu");
+	const table = localStorage.getItem("table");
+
+	// Check if all data exists in localStorage
+	if (fullName && phone && email && attendees && time && menu && table) {
+		// Populate the details page with the retrieved data
+		document.getElementById("fullName").textContent = fullName;
+		document.getElementById("phone").textContent = phone;
+		document.getElementById("email").textContent = email;
+		document.getElementById("attendees").textContent = attendees;
+		document.getElementById("time").textContent = time;
+		document.getElementById("menu").textContent = menu;
+		document.getElementById("table").textContent = table;
+	} else {
+		// If any data is missing, alert the user or redirect back to the form
+		alert("No RSVP data found. Please fill out the form first.");
+		window.location.href = "index.html"; // Redirect to the form page if no data found
+	}
+
+	</script>
+</body>
+</html>
